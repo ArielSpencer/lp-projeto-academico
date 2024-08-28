@@ -164,7 +164,7 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Input
               type="text"
-              placeholder="nome"
+              placeholder="Nome"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
               minLength="3"
@@ -172,14 +172,14 @@ const Home = () => {
             />
             <Input
               type="text"
-              placeholder="empresa"
+              placeholder="Empresa"
               value={company}
               onChange={(e) => setCompany(e.target.value)}
               minLength="3"
             />
             <Input
               type="email"
-              placeholder="email"
+              placeholder="E-mail"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               minLength="5"
@@ -188,7 +188,7 @@ const Home = () => {
             />
             <Input
               type="number"
-              placeholder="whatsapp"
+              placeholder="WhatsApp"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               minLength="10"
@@ -210,7 +210,7 @@ const Home = () => {
               value={indication}
             >
               <SelectTrigger className="w-full">
-                <SelectValue placeholder="Como ficou sabendo de nossa iniciativa?" />
+                <SelectValue placeholder="Como nos conheceu?" />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
@@ -227,7 +227,7 @@ const Home = () => {
           <div className="grid grid-cols-1 gap-6">
             <Input
               type="text"
-              placeholder="Quais tipos de dados você precisa armazenar? (ex. clientes, estoque, pedidos)"
+              placeholder="Quais dados precisa armazenar?"
               value={dataLog}
               onChange={(e) => setDataLog(e.target.value)}
               minLength="10"
@@ -236,7 +236,7 @@ const Home = () => {
             />
             <Input
               type="text"
-              placeholder="Como os dados serão usados no dia a dia do seu negócio?"
+              placeholder="Qual a finalidade dos dados?"
               value={dailyUse}
               onChange={(e) => setDailyUse(e.target.value)}
               minLength="10"
@@ -245,7 +245,7 @@ const Home = () => {
             />
             <Input
               type="text"
-              placeholder="Quais são as expectativas de crescimento do seu banco de dados?"
+              placeholder="Quais expectativas de crescimento?"
               value={growthExp}
               onChange={(e) => setGrowthExp(e.target.value)}
               minLength="10"
@@ -254,7 +254,7 @@ const Home = () => {
             />
             <Input
               type="text"
-              placeholder="Quais principais dificuldades você enfrenta com dados?"
+              placeholder="Principais dificuldades com dados?"
               value={challenge}
               onChange={(e) => setChallenge(e.target.value)}
               minLength="10"
@@ -262,10 +262,10 @@ const Home = () => {
               required
             />
           </div>
-          <p className="text-xl text-primary pt-10">Como você descreveria sua empresa:</p>
+          <p className="text-xl text-primary pt-10">Descreva seu projeto:</p>
           <Textarea
             className="text-xl h-[200px]"
-            placeholder="Descreva sua empresa e forneça mais detalhes relevantes"
+            placeholder="Descreva sua empresa ou projeto e forneça mais detalhes relevantes."
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             minLength="3"
