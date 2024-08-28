@@ -69,7 +69,7 @@ const Home = () => {
         </h1>
       </div>
 
-      <div className="flex h-[107vh] md:h-[70vh] xl:h-[100vh] md:pb-10">
+      <div className="flex h-[120vh] py-0 md:h-[60vh] xl:h-[100vh] md:pb-10">
         <div className="container mx-auto flex flex-col md:flex-row items-center xl:mr-0 xl:ml-[10%]">
 
           <div className="text-xl flex-1 flex flex-col gap-12">
@@ -80,7 +80,7 @@ const Home = () => {
             <p className="md:w-[80%]">O objetivo é desenvolver essas soluções de forma <Rel>gratuita</Rel>, aplicando na prática os conhecimentos que estamos adquirindo ao longo do curso, <Rel>com o suporte dos nossos professores</Rel>.</p>
           </div>
 
-          <div className="flex-1 h-auto z-1">
+          <div className="relative w-[500px] h-[500px] md:w-[300px] md:h-[300px] xl:w-[500px] xl:h-[500px] pb-[-10vh] z-1">
             <Image
               src={
                 window.innerWidth < 768
@@ -90,19 +90,18 @@ const Home = () => {
               priority
               quality={100}
               alt="Projeto integrador FAM"
-              layout="intrinsic"
-              objectFit="contain"
-              width={498}
-              height={498}
+              fill
+              style={{ objectFit: 'contain' }}
+              sizes="(min-widht: 500px) 100vw, 50vw"
             />
           </div>
 
         </div>
       </div>
 
-      <div className="h-full container mx-auto h-[100vh] z-2">
+      <div className="h-full mt-[-20%] md:mt-0 container mx-auto h-[100vh]">
         <ul className="flex flex-col text-primary/80 xl:flex-row gap-12 xl:gap-6">
-          <li className="flex-1 bg-secondary py-12 px-10 rounded-xl flex flex-col justify-start lg:items-start gap-10">
+          <li className="flex-1 bg-secondary py-12 px-10 rounded-xl flex flex-col justify-start lg:items-start gap-10 z-50">
             <h3 className="text-2xl text-primary leading-normal">Desenvolvimento gratuito:</h3>
             <p>Implementaremos um sistema de banco de dados personalizado para atender às necessidades da sua empresa.</p>
           </li>
@@ -158,7 +157,7 @@ const Home = () => {
               placeholder="nome"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
-              minlength="3"
+              minLength="3"
               required
             />
             <Input
@@ -166,15 +165,15 @@ const Home = () => {
               placeholder="empresa"
               value={company}
               onChange={(e) => setCompany(e.target.value)}
-              minlength="3"
+              minLength="3"
             />
             <Input
               type="email"
               placeholder="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              minlength="5"
-              maxlength="50"
+              minLength="5"
+              maxLength="50"
               required
             />
             <Input
@@ -182,8 +181,8 @@ const Home = () => {
               placeholder="whatsapp"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
-              minlength="10"
-              maxlength="18"
+              minLength="10"
+              maxLength="18"
               required
             />
             <Input
@@ -191,8 +190,8 @@ const Home = () => {
               placeholder="Qual seu cargo na empresa?"
               value={position}
               onChange={(e) => setPosition(e.target.value)}
-              minlength="3"
-              maxlength="30"
+              minLength="3"
+              maxLength="30"
               required
             />
             <Select
@@ -221,8 +220,8 @@ const Home = () => {
               placeholder="Quais tipos de dados você precisa armazenar? (ex. clientes, estoque, pedidos)"
               value={dataLog}
               onChange={(e) => setDataLog(e.target.value)}
-              minlength="10"
-              maxlength="200"
+              minLength="10"
+              maxLength="200"
               required
             />
             <Input
@@ -230,8 +229,8 @@ const Home = () => {
               placeholder="Como os dados serão usados no dia a dia do seu negócio?"
               value={dailyUse}
               onChange={(e) => setDailyUse(e.target.value)}
-              minlength="10"
-              maxlength="200"
+              minLength="10"
+              maxLength="200"
               required
             />
             <Input
@@ -239,8 +238,8 @@ const Home = () => {
               placeholder="Quais são as expectativas de crescimento do seu banco de dados?"
               value={growthExp}
               onChange={(e) => setGrowthExp(e.target.value)}
-              minlength="10"
-              maxlength="200"
+              minLength="10"
+              maxLength="200"
               required
             />
             <Input
@@ -248,8 +247,8 @@ const Home = () => {
               placeholder="Quais principais dificuldades você enfrenta com dados?"
               value={challenge}
               onChange={(e) => setChallenge(e.target.value)}
-              minlength="10"
-              maxlength="200"
+              minLength="10"
+              maxLength="200"
               required
             />
           </div>
@@ -259,8 +258,8 @@ const Home = () => {
             placeholder="..."
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            minlength="3"
-            maxlength="500"
+            minLength="3"
+            maxLength="500"
             required
           />
           <div
