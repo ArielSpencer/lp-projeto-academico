@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -11,6 +11,16 @@ import Image from 'next/image';
 import Photo from '@/components/Photo';
 
 const Home = () => {
+  const [windowWidth, setWindowWidth] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Set initial window width
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const [firstName, setFirstName] = useState('');
   const [company, setCompany] = useState('');
   const [email, setEmail] = useState('');
@@ -83,7 +93,7 @@ const Home = () => {
           <div className="relative w-[500px] h-[500px] md:w-[300px] md:h-[300px] xl:w-[500px] xl:h-[500px] pb-[-10vh] z-1">
             <Image
               src={
-                window.innerWidth < 768
+                windowWidth < 768
                   ? "/assets/banner-projeto-intregrador-fam-mobile.webp"
                   : "/assets/banner-projeto-intregrador-fam.webp"
               }
@@ -120,7 +130,7 @@ const Home = () => {
         <div className="w-auto h-auto container flex flex-col md:flex-row py-8 mt-10 lg:flex-1">
           <Photo
             src={
-              window.innerWidth < 960
+              windowWidth < 960
                 ? "/assets/buscamos-empresas-parceiras-projeto-intregrador-fam-mobile.webp"
                 : "/assets/buscamos-empresas-parceiras-projeto-intregrador-fam.webp"
             }
@@ -138,7 +148,7 @@ const Home = () => {
               <Rel>Disposição para colaborar:</Rel><br /> Buscamos empresas dispostas a nos fornecer feedbacks regulares e a participar ativamente do processo de desenvolvimento.
             </li>
             <li>
-              <Rel>Dúvidas?</Rel><br /> Entre em contato <a className="hover:text-accent cursor-pointer" href="https://wa.me/5511991007079/">(11) 99100-7079</a>
+              <Rel>Dúvidas?</Rel><br /> Entre em contato <a className="hover:text-accent cursor-pointer" href="https://wa.me/5511991007079/" aria-label="Entre em contato pelo WhatsApp">(11) 99100-7079</a>
             </li>
           </ul>
         </div>
@@ -255,7 +265,7 @@ const Home = () => {
           <p className="text-xl text-primary pt-10">Como você descreveria sua empresa:</p>
           <Textarea
             className="text-xl h-[200px]"
-            placeholder="..."
+            placeholder="Descreva sua empresa e forneça mais detalhes relevantes"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             minLength="3"
