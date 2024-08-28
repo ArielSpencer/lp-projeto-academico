@@ -287,7 +287,7 @@ const Home = () => {
       </div>
 
       <footer className="text-center text-secondary font-bold leading-none hover:text-primary bg-accent/70 py-6 px-2">
-        <a href='#'>
+        <a href='/termos-de-uso'>
           Ao se cadastrar você concorda com as disposições destes termos e condições de uso de dados.
         </a>
       </footer>
