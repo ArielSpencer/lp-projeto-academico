@@ -73,6 +73,10 @@ const Home = () => {
   return (
     <main className="flex flex-col">
 
+      <header className="text-4xl text-primary font-bold text-center bg-accent p-12 mb-8">
+        Inscrições Encerradas!
+      </header>
+
       <div className="hidden md:inline-flex py-5 px-10 lg:py-10 lg:px-20 xl:hidden">
         <h1 className="text-4xl text-secondary font-bold leading-normal">
           Estamos em busca de uma empresas parceira para nosso projeto acadêmico!
@@ -277,10 +281,11 @@ const Home = () => {
           >
             <p className={successMessageVisible ? "text-md" : "hidden"}>Mensagem enviada com sucesso! Em breve estraremos em contato.</p>
             <Button
+              disabled
               size="md"
-              className="max-w-40"
+              className="max-w-60 bg-accent/70 cursor-not-allowed"
             >
-              Enviar
+              Inscrições Encerradas
             </Button>
           </div>
         </form>
